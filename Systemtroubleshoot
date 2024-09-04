@@ -1,0 +1,32 @@
+def check_power_supply():
+    power_on = input("Is the power supply working? (yes/no): ").lower()
+    if power_on == "no":
+        return "Check the power cables and power supply."
+
+def check_hard_drive():
+    hard_drive = input("Is the hard drive making unusual noise? (yes/no): ").lower()
+    if hard_drive == "yes":
+        return "Hard drive might be faulty. Consider replacing it."
+
+def check_ram():
+    ram_seat = input("Are you getting a RAM error? (yes/no): ").lower()
+    if ram_seat == "yes":
+        return "Try reseating the RAM or replacing it."
+
+def troubleshoot():
+    result = check_power_supply()
+    if result:
+        return result
+
+    result = check_hard_drive()
+    if result:
+        return result
+
+    result = check_ram()
+    if result:
+        return result
+
+    return "No issues detected. Consider consulting a technician."
+
+# Running the troubleshooting process
+print(troubleshoot())
